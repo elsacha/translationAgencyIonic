@@ -1,5 +1,6 @@
 {
     "jscodehints.detectedExclusions": [
-        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/controllers/controllers.js"
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/controllers/controllers.js",
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/controllers/auth.js"
     ]
 }
