@@ -1,6 +1,11 @@
 {
     "jscodehints.detectedExclusions": [
         "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/controllers/controllers.js",
-        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/controllers/auth.js"
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/controllers/auth.js",
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/plugins/cordova-plugin-console/www/logger.js",
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/plugins/cordova-plugin-device/src/blackberry10/index.js",
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/www/js/services.js",
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/plugins/cordova-plugin-device/src/tizen/DeviceProxy.js",
+        "/Users/gadebski/Documents/fullstack_capstone/ionic/translationAgencyIonic/plugins/cordova-plugin-device/src/ubuntu/device.js"
     ]
 }

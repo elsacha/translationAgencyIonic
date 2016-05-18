@@ -11,7 +11,6 @@ angular.module('app.controllers', [])
 
     // Form data for the login modal
     $scope.loginData = $localStorage.getObject('userinfo','{}');
-    $scope.reservation = {};
     $scope.registration = {};
     $scope.loggedIn = false;
     
@@ -41,9 +40,10 @@ angular.module('app.controllers', [])
     $scope.doLogin = function () {
         console.log('Doing login', $scope.loginData);
         $localStorage.storeObject('userinfo',$scope.loginData);
+        //console.log("userinfo: "+ $localStorage.get('userinfo'));
 
         AuthFactory.login($scope.loginData);
-
+        console.log("user_info: " +  $localStorage.getObject('userinfo','{}'));
         $scope.closeLogin();
     };
     
@@ -101,10 +101,12 @@ angular.module('app.controllers', [])
 
 // implement the TranslatorsController and About Controller here
 
-.controller('TranslatorsController', ['$scope', '$http', function($scope, $http) {
+.controller('TranslatorsController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage) {
     $scope.translators = [];
+    console.log("TRANS CONTR token: " +$localStorage.get('Token'));
      $http.
-     get('http://0.0.0.0:3000/api/Translators').
+     //get('http://0.0.0.0:3000/api/Translators').
+     get('http://translation-agency.mybluemix.net/api/Translators').
      success(function(data) {
        console.log(JSON.stringify(data));
        //$scope.target = JSON.stringify(data);

@@ -3,7 +3,8 @@
 angular.module('app.services', ['ngResource'])
 //.constant("baseURL", "https://143.89.197.186:3443/")
 //.constant("baseURL", "https://192.168.1.127:3443/")
-.constant("baseURL", "http://localhost:8100/")
+//.constant("baseURL", "http://0.0.0.0:3000/api/")
+.constant("baseURL", "http://translation-agency.mybluemix.net/api/")
 .factory('menuFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
             return $resource(baseURL + "dishes/:id", null, {
@@ -62,6 +63,7 @@ angular.module('app.services', ['ngResource'])
     authToken = credentials.token;
  
     // Set the token as header for your requests!
+      console.log("setting x-access-token: " + authToken);
     $http.defaults.headers.common['x-access-token'] = authToken;
   }
  
@@ -75,10 +77,12 @@ angular.module('app.services', ['ngResource'])
      
     authFac.login = function(loginData) {
         
-        $resource(baseURL + "users/login")
-        .save(loginData,
+        $resource(baseURL + "Customers/login")
+        .save(loginData, //save makes POST request
+        //.save({"username": "admin", "password": "pa55w0rd"},
            function(response) {
-              storeUserCredentials({username:loginData.username, token: response.token});
+              storeUserCredentials({username:loginData.username, token: response.id});
+            console.log("store token: "+ response.id);
               $rootScope.$broadcast('login:Successful');
            },
            function(response){
