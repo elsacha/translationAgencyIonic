@@ -106,14 +106,14 @@ angular.module('app.services', ['ngResource'])
     };
     
     authFac.logout = function() {
-        $resource(baseURL + "users/logout").get(function(response){
+        $resource(baseURL + "Customers/logout").get(function(response){
         });
         destroyUserCredentials();
     };
     
     authFac.register = function(registerData) {
         
-        $resource(baseURL + "users/register")
+        $resource(baseURL + "Customers/register")
         .save(registerData,
            function(response) {
               authFac.login({username:registerData.username, password:registerData.password});

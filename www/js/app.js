@@ -28,14 +28,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'templates/sidebar.html',
     controller: 'AppCtrl'
   })
 
   .state('app.search', {
     url: '/search',
     views: {
-      'menuContent': {
+      'mainContent': {
         templateUrl: 'templates/search.html'
       }
     }
@@ -44,26 +44,18 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
   .state('app.translators', {
     url: '/translators',
     views: {
-      'menuContent': {
+      'mainContent': {
         templateUrl: 'templates/translators.html',
         controller: 'TranslatorsController'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
   
   .state('app.home', {
       url: '/home',
       views: {
-        'menuContent': {
+        'mainContent': {
           templateUrl: 'templates/home.html'  
         }
       }
