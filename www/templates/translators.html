@@ -1,7 +1,9 @@
 <ion-view view-title="Translators">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="translator in translators">
+<!--    <ion-list>-->
+    <ul class="list list-inset">
+        <li class="item item-avatar item-text-wrap" ng-repeat="translator in translators">
+<!--        <ion-item ng-repeat="translator in translators">-->
         <img ng-src="./img/ava1.png">
           <h2>{{translator.firstName}}&nbsp;{{translator.lastName}}</h2>
             <h3>Languages:</h3>
@@ -15,8 +17,14 @@
                     <ion-item ng-repeat="spec in translator.specialization">
                         {{spec}}
                     </ion-item>
-                </ion-list>
+            <h3>Contact:</h3>
+                <p>{{translator.email}}</p>
+<!--                </ion-list>-->
+      </li>
+    </ul>
+<!--
       </ion-item>
     </ion-list>
+-->
   </ion-content>
 </ion-view>
