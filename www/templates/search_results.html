@@ -1,0 +1,22 @@
+<ion-view view-title="Translators">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="translator in translators">
+        <img ng-src="./img/ava1.png">
+          <h2>{{translator.firstName}}&nbsp;{{translator.lastName}}</h2>
+            <h3>Languages:</h3>
+                <ion-list>
+                    <ion-item ng-repeat="comb in translator.language_combination">
+                        from &nbsp;{{comb.source}}&nbsp; to {{comb.target}}
+                    </ion-item>
+                </ion-list>
+            <h3>Specialization:</h3>
+                <ion-list>
+                    <ion-item ng-repeat="spec in translator.specialization">
+                        {{spec}}
+                    </ion-item>
+                </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

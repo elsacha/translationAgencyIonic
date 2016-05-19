@@ -36,7 +36,18 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
     url: '/search',
     views: {
       'mainContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'TranslatorsSearchController'
+      }
+    }
+  })
+  
+  .state('app.search_results', {
+    url: '/search_results',
+    views: {
+      'mainContent': {
+        templateUrl: 'templates/search_results.html',
+        controller: 'TranslatorsSearchController'
       }
     }
   })
@@ -50,6 +61,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
       }
     }
   })
+  
+
 
   
   .state('app.home', {

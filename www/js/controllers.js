@@ -125,6 +125,47 @@ angular.module('app.controllers', [])
     
   }])
 
+.controller('TranslatorsSearchController', ['$scope', '$http', 'searchService', '$state',
+                function($scope, $http, searchService, $state) {
+    $scope.submitTranslatorSearch = function () {
+        console.log("going to search results");
+          //$scope.goTo = function(){
+          $state.go('app.search_results');
+    //}
+   };
+    $scope.searchSourceLang =  searchService.searchSourceLang;
+      
+    $scope.$watch('searchSourceLang', function() {
+       searchService.searchSourceLang = $scope.searchSourceLang; 
+    });
+
+    $scope.searchTargetLang =  searchService.searchTargetLang;
+      
+    $scope.$watch('searchTargetLang', function() {
+       searchService.searchTargetLang = $scope.searchTargetLang; 
+    });
+
+    $scope.searchSpec =  searchService.searchSpec;
+
+    $scope.$watch('searchSpec', function() {
+       searchService.searchSpec = $scope.searchSpec; 
+    });
+    
+    $http.
+        get('http://translation-agency.mybluemix.net/api//Translators/?filter= {"where": { "language_combination.source": "'
+                                                    + $scope.searchSourceLang + 
+                                                    '", "language_combination.target": "'+ $scope.searchTargetLang +
+                                                    '", "specialization": "'+ $scope.searchSpec +
+                                                    '"} }').
+        success(function(data) {
+          console.log(JSON.stringify(data));
+          //$scope.target = JSON.stringify(data);
+            $scope.translators = data;
+        });      
+
+
+      }])
+
 
 // implement the IndexController and About Controller here
 

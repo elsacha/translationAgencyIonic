@@ -1,43 +1,48 @@
 <ion-view view-title="Search">
   <ion-content>
-    <!-- {"where": { "language_combination.source": "French" , "specialization":"legal"} } -->
-<div class="row">
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">Translators search</h3>
-        </div>
-    <div class="panel-body">
-        <div class="form-group">
-            <!-- <input type="text" ng-model="searchSourceLang" class="form-control" /> -->
-            Translates from:
+      <form id= "translatorSearchForm" name= "translatorSearchForm" ng-submit="submitTranslatorSearch()">
+        <div class="list">
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Translates from:
+            </div>
             <select name="searchSource" ng-model="searchSourceLang">
                 <option value="English">English</option>
                 <option value="French">French</option>
                 <option value="German">German</option>
                 <option value="Russian">Russian</option>
                 <option value="Spanish">Spanish</option>
-            </select><br />
-            <!-- <input type="text" ng-model="searchTargetLang" class="form-control" /> -->
-            To:
+            </select>
+          </label>
+            
+        <label class="item item-input item-select">
+            <div class="input-label">
+              Translates into:
+            </div>
             <select name="searchTarget" ng-model="searchTargetLang">
                 <option value="English">English</option>
                 <option value="French">French</option>
                 <option value="German">German</option>
                 <option value="Russian">Russian</option>
                 <option value="Spanish">Spanish</option>
-            </select><br />
-            <!-- <input type="text" ng-model="searchSpec" class="form-control" /> -->
-            Specialization:
-            <select name="searchSpec" ng-model="searchSpec">
+            </select>
+          </label>
+            
+        <label class="item item-input item-select">
+            <div class="input-label">
+              Specialization:
+            </div>
+             <select name="searchSpec" ng-model="searchSpec">
             	<option value="computer">Computer</option>
 				<option value="legal">Legal</option>
 				<option value="medical">Medical</option>
 				<option value="technical">Technical</option>
 			</select>
+          </label>
+
         </div>
-        <a href="#/translators_search_results" class="btn btn-primary">Search</a>
-    </div>
-  </div>
-</div>
+          <button class="button button-block button-positive" type="submit">Submit</button>
+      </form>
   </ion-content>
 </ion-view>
