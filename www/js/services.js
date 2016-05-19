@@ -113,7 +113,7 @@ angular.module('app.services', ['ngResource'])
     
     authFac.register = function(registerData) {
         
-        $resource(baseURL + "Customers/register")
+        $resource(baseURL + "Customers")//loopback route receiving a put request with json data
         .save(registerData,
            function(response) {
               authFac.login({username:registerData.username, password:registerData.password});
