@@ -155,9 +155,9 @@ angular.module('app.services', ['ngResource'])
     return authFac;
     
 }])
-.service('searchService', function() {
-   this.searchSourceLang = "French";
-   this.searchTargetLang = "English";
-   this.searchSpec = "technical";
-})
+//.service('searchService', ["$rootScope", function($rootScope) {
+//   this.searchSourceLang = "French"
+//   this.searchTargetLang = "English";
+//   this.searchSpec = "technical";
+//}])
 ;
