@@ -105,8 +105,8 @@ angular.module('app.controllers', [])
     $scope.translators = [];
     //console.log("TRANS CONTR token: " +$localStorage.get('Token'));
      $http.
-     get('http://0.0.0.0:3000/api/Translators').
-     //get('http://translation-agency.mybluemix.net/api/Translators').
+     //get('http://0.0.0.0:3000/api/Translators').
+     get('http://translation-agency.mybluemix.net/api/Translators').
      success(function(data) {
        console.log(JSON.stringify(data));
        //$scope.target = JSON.stringify(data);
@@ -141,8 +141,8 @@ angular.module('app.controllers', [])
    };
 
     $http.
-        //get('http://translation-agency.mybluemix.net/api/Translators/?filter= {"where": {
-    get('http://0.0.0.0:3000/api/Translators/?filter= {"where": {"language_combination.source": "'
+        get('http://translation-agency.mybluemix.net/api/Translators/?filter= {"where": {"language_combination.source": "'
+    //get('http://0.0.0.0:3000/api/Translators/?filter= {"where": {"language_combination.source": "'
                                                     + $localStorage.get('searchSourceLang') + 
                                                     '", "language_combination.target": "'+ $localStorage.get('searchTargetLang') +
                                                     '", "specialization": "'+ $localStorage.get('searchSpec') +

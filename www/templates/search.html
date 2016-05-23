@@ -7,7 +7,7 @@
             <div class="input-label">
               Translates from:
             </div>
-            <select name="searchSource" ng-model="searchSourceLang">
+            <select name="searchSource" ng-model="searchSourceLang" required>
                 <option value="English">English</option>
                 <option value="French">French</option>
                 <option value="German">German</option>
@@ -20,7 +20,7 @@
             <div class="input-label">
               Translates into:
             </div>
-            <select name="searchTarget" ng-model="searchTargetLang">
+            <select name="searchTarget" ng-model="searchTargetLang" required>
                 <option value="English">English</option>
                 <option value="French">French</option>
                 <option value="German">German</option>
@@ -33,7 +33,8 @@
             <div class="input-label">
               Specialization:
             </div>
-             <select name="searchSpec" ng-model="searchSpec">
+             <select name="searchSpec" ng-model="searchSpec" required>
+                <option value="general">General</option>
             	<option value="computer">Computer</option>
 				<option value="legal">Legal</option>
 				<option value="medical">Medical</option>
